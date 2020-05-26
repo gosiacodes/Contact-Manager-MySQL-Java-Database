@@ -1,3 +1,4 @@
+package a.Package;
 
 public class DatabaseLoginMySQLJava {
 	private static String userName = "root";

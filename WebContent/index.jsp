@@ -8,16 +8,25 @@
 </head>
 <body>
 
-<form action ="ControllerServlet" method="post">
+<div align="center">
+	<h1>Contact Manager</h1>
 	
-	Name: <input type="text" name="name"><br>
-	Password: <input type="password" name="password"><br>
-	
-	<br/>
-	<input type="submit" value="Login">
-	
-</form>
-
+	<form action ="ControllerServlet" method="post">
+		<table>
+			<tr>
+				<td>Name: </td> 
+				<td><input type="text" name="name" placeholder="enter name"></td>
+			</tr>
+			<tr>
+				<td>Password: </td>
+				<td><input type="password" name="password" placeholder="enter password"></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center"><input type="submit" value="Login"></td>
+			</tr>
+		</table>
+	</form>
+</div>
 </body>
 </html>
 

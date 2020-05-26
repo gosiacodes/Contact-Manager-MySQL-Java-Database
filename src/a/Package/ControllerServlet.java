@@ -1,3 +1,4 @@
+package a.Package;
 
 
 import java.io.IOException;
@@ -13,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class ClassServlet
  */
-@WebServlet("/ClassServlet")
+@WebServlet("/ControllerServlet")
 public class ControllerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -47,7 +48,7 @@ public class ControllerServlet extends HttpServlet {
 		String name = request.getParameter("name");
 		String password = request.getParameter("password");
 		
-		mvc.bean.aBean bean = new mvc.bean.aBean();
+		aBean bean = new aBean();
 		bean.setName(name);
 		bean.setPassword(password);
 		request.setAttribute("bean", bean);
@@ -55,10 +56,10 @@ public class ControllerServlet extends HttpServlet {
 		boolean status = bean.validate();
 		
 		if (status) {
-			
+			/* gives null null null null to database
 			if(MySQLConnection.connectSQL()) {
 				MySQLConnection.stateSQL();
-			}
+			}*/
 			
 			RequestDispatcher rd = request.getRequestDispatcher("login-success.jsp");
 			rd.forward(request, response);
@@ -67,7 +68,9 @@ public class ControllerServlet extends HttpServlet {
 		else {
 			RequestDispatcher rd = request.getRequestDispatcher("login-error.jsp");
 			rd.forward(request, response);
-		}	
+		}
+		
+		out.close();  
 		
 	}
 
